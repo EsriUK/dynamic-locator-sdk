@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+
+  <?define Version = "0.0.0.999" ?>
+
+  <?define ProductName = "Esri UK Dynamic Locators" ?>
+
+  <?if $(var.Platform) = x64 ?>
+  <?define ProductDisplayName = "$(var.ProductName) 64-bit" ?>
+  <?define ProductId = "afebeb55-2DE3-45ce-bdc1-2b5fe78bc761" ?>
+  <?define ProductUpgradeCode = "fc934900-2a81-12AA-9535-85fb92f9be39" ?>
+  <?define Win64 = "yes" ?>
+  <?define PlatformProgramFilesFolder = "ProgramFiles64Folder" ?>
+  <?define PlatformCommonFilesFolder = "CommonFiles64Folder" ?>
+  <?else ?>
+  <?define ProductDisplayName = "$(var.ProductName)" ?>
+  <?define ProductId = "51AF4E24-E691-63C7-8CF4-43D47D1A51B8" ?>
+  <?define ProductUpgradeCode = "CE1A544D-8A12-4748-A127-D613DA5BC12D" ?>
+  <?define Win64 = "no" ?>
+  <?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
+  <?define PlatformCommonFilesFolder = "CommonFilesFolder" ?>
+  <?endif ?>
+</Include>

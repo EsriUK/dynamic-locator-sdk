@@ -1,0 +1,40 @@
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\bin\bng_locator.loc
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\bin\ESRIUK.DynamicLocators.BNGLocatorTESTS.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\bin\ESRIUK.DynamicLocators.BNGLocatorTESTS.pdb
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\bin\ESRIUK.DynamicLocators.BNGLocatorTESTS.tlb
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\bin\ESRIUK.DynamicLocators.BNGLocator.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\bin\ESRIUK.DynamicLocators.Core.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\bin\nunit.framework.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\bin\NUnit.VisualStudio.TestAdapter.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\bin\log4net.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\bin\nunit.core.interfaces.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\bin\nunit.util.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\bin\nunit.core.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\bin\ESRIUK.DynamicLocators.BNGLocator.pdb
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\bin\ESRIUK.DynamicLocators.Core.pdb
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\bin\nunit.framework.xml
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\obj\Debug\BNGLocatorTESTS.csprojResolveAssemblyReference.cache
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\obj\Debug\ESRIUK.DynamicLocators.BNGLocatorTESTS.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocatorTESTS\obj\Debug\ESRIUK.DynamicLocators.BNGLocatorTESTS.pdb
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\bin\bng_locator.loc
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\bin\ESRIUK.DynamicLocators.BNGLocatorTESTS.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\bin\ESRIUK.DynamicLocators.BNGLocatorTESTS.pdb
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\bin\ESRIUK.DynamicLocators.BNGLocatorTESTS.tlb
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\bin\ESRIUK.DynamicLocators.BNGLocator.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\bin\ESRIUK.DynamicLocators.Core.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\bin\nunit.framework.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\bin\NUnit.VisualStudio.TestAdapter.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\bin\log4net.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\bin\nunit.core.interfaces.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\bin\nunit.util.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\bin\nunit.core.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\bin\ESRIUK.DynamicLocators.BNGLocator.pdb
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\bin\ESRIUK.DynamicLocators.Core.pdb
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\bin\nunit.framework.xml
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\obj\Debug\BNGLocatorTESTS.csprojResolveAssemblyReference.cache
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\obj\Debug\ESRIUK.DynamicLocators.BNGLocatorTESTS.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocatorTESTS\obj\Debug\ESRIUK.DynamicLocators.BNGLocatorTESTS.pdb
+C:\Program Files\ArcGIS\Server\bin\bng_locator.loc
+C:\Program Files\ArcGIS\Server\bin\ESRIUK.DynamicLocators.BNGLocatorTESTS.dll
+C:\Program Files\ArcGIS\Server\bin\ESRIUK.DynamicLocators.BNGLocatorTESTS.pdb
+C:\Program Files\ArcGIS\Server\bin\ESRIUK.DynamicLocators.BNGLocatorTESTS.tlb

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+	 xmlns:iis="http://schemas.microsoft.com/wix/IIsExtension"
+	 xmlns:vs="http://schemas.microsoft.com/wix/VSExtension"
+	 xmlns:ue="http://schemas.microsoft.com/wix/UtilExtension">
+
+  <?include $(sys.CURRENTDIR)\Variables.wxi?>
+  
+  <Product Id="$(var.ProductId)"
+    Name="$(var.ProductDisplayName) $(var.Version)"
+    Language="1033"
+    Version="$(var.Version)"
+    Manufacturer="Esri UK"
+    UpgradeCode="$(var.ProductUpgradeCode)">
+    
+    <Package InstallerVersion="301" Compressed="yes" Platform="$(var.Platform)" />
+
+    <Media Id="1" Cabinet="DynamicLocator.cab" EmbedCab="yes" />
+
+     <Upgrade Id="$(var.ProductUpgradeCode)">
+      <UpgradeVersion OnlyDetect='yes' Property='SELFFOUND'
+        Minimum="1.0.0.0" IncludeMinimum='yes'
+        Maximum="0.0.0.999" IncludeMaximum='yes' />
+      <UpgradeVersion OnlyDetect='yes' Property='NEWERFOUND'
+        Minimum="0.0.0.999" IncludeMinimum='no' />
+    </Upgrade>
+    <Upgrade Id="$(var.ProductUpgradeCode)">
+      <UpgradeVersion OnlyDetect="no" Property="PREVIOUSFOUND"
+        Minimum="1.0.0.0" IncludeMinimum="yes"
+        Maximum="0.0.0.999" IncludeMaximum="no" />
+    </Upgrade>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="$(var.PlatformProgramFilesFolder)">
+        <Directory Id='ESRIUKFolder' Name='ESRIUK'>
+          <Directory Id="INSTALLLOCATION" Name="DynamicLocators">
+            <!--Look in Application.wxs for assemblies/scripts inserted here-->            
+          </Directory>
+        </Directory>
+      </Directory>
+
+      <Directory Id="ARCGISCOMMON">
+        <Directory Id="ARCGISCOMMONBin" Name="bin">
+          <Component Id="Esri_Regasm_Config_Component" Guid="86014BB1-745E-48D2-A665-7B73D1C49301" DiskId="1">
+            <Condition>ARCGISHOME1033 OR ARCGISHOME1032 OR ARCGISHOME1031 OR ARCGISHOME1030</Condition>
+            <File Id="EsriRegasmConfig" Name="ESRIRegAsm.exe.config" Source ="..\..\InstallerDependencies\EsriRegasm\ESRIRegAsm.exe.config"/>
+          </Component>
+        </Directory>
+      </Directory>
+
+      <Directory Id="ARCGISCOMMON64">
+        <Directory Id="ARCGISCOMMONBin64" Name="bin">
+          <Component Id="Esri_Regasm_Config_Component64" Guid="D0ECD950-39A0-490B-815B-636B20ED844D" DiskId="1">
+            <Condition>ARCGISHOMESERVER1033 OR ARCGISHOMESERVER1032 OR ARCGISHOMESERVER1031 OR ARCGISHOMESERVER1030</Condition>
+            <File Id="EsriRegasmConfig64" Name="ESRIRegAsm.exe.config" Source ="..\..\InstallerDependencies\EsriRegasm\ESRIRegAsm.exe.config"/>
+          </Component>
+        </Directory>
+      </Directory>
+      
+      
+    </Directory>
+
+    <Feature Id="DynamicLocator_Core" Title="Dynamic Locators" Level="1" ConfigurableDirectory="INSTALLLOCATION"
+             Description="Dynamic Locators." >
+
+      <ComponentRef Id="Esri_Regasm_Config_Component"/>
+      <ComponentRef Id="Esri_Regasm_Config_Component64"/>
+      <!--The main application-->
+      <ComponentRef Id="DynamicLocator_Component"/>
+     
+      <!-- Note: The following ComponentGroupRef is required to pull in generated authoring from project references. 
+      <ComponentGroupRef Id="Product.Generated" />-->
+    </Feature>
+
+    <!--Does not show feature tree-->
+    <UIRef Id="WixUI_InstallDir" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
+
+    <!--Licence-->
+    <WixVariable Id="WixUILicenseRtf" Value="..\..\InstallerDependencies\EULA\Licence.rtf"/>
+
+    <!--Custom actions for upgrading-->
+    <CustomAction Id='AlreadyUpdated' Error='Version has already been updated.' />
+    <CustomAction Id="PreventDowngrading" Error='Newer version already installed.' />
+
+    
+    
+    <!-- Registering with DESKTOP -->
+    <CustomAction Id="InvokeESRIRegAsm_CmdCore" Property="InvokeESRIRegAsm_Core" Value="&quot;[ARCGISCOMMON]bin\ESRIRegAsm.exe&quot; &quot;[INSTALLLOCATION]ESRIUK.DynamicLocators.Core.dll&quot; /p Desktop /s" Execute="immediate" />    
+    <CustomAction Id="InvokeESRIRegAsm_CmdBNG" Property="InvokeESRIRegAsm_BNG" Value="&quot;[ARCGISCOMMON]bin\ESRIRegAsm.exe&quot; &quot;[INSTALLLOCATION]ESRIUK.DynamicLocators.BNGLocator.dll&quot; /p Desktop /s" Execute="immediate" />
+    <!--<CustomAction Id="InvokeESRIRegAsm_CmdING" Property="InvokeESRIRegAsm_ING" Value="&quot;[ARCGISCOMMON]bin\ESRIRegAsm.exe&quot; &quot;[INSTALLLOCATION]ESRIUK.DynamicLocators.INGLocator.dll&quot; /p Desktop /s" Execute="immediate" />--> 
+    <CustomAction Id="InvokeESRIRegAsm_CmdGeoCoord" Property="InvokeESRIRegAsm_GeoCoord" Value="&quot;[ARCGISCOMMON]bin\ESRIRegAsm.exe&quot; &quot;[INSTALLLOCATION]ESRIUK.DynamicLocators.GeoCoordLocator.dll&quot; /p Desktop /s" Execute="immediate" />                                                                                                                                      
+
+    <CustomAction Id="InvokeESRIRegAsm_Core" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" Impersonate="no"  />
+    <CustomAction Id="InvokeESRIRegAsm_BNG" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" Impersonate="no" />
+    <!--<CustomAction Id="InvokeESRIRegAsm_ING" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" Impersonate="no" />  -->  
+    <CustomAction Id="InvokeESRIRegAsm_GeoCoord" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" Impersonate="no" />
+
+    <CustomAction Id="InvokeESRIRegAsm_CmdUninstallCore" Property="InvokeESRIRegAsm_UninstallCore" Value="&quot;[ARCGISCOMMON]bin\ESRIRegAsm.exe&quot; &quot;[INSTALLLOCATION]ESRIUK.DynamicLocators.Core.dll&quot; /p Desktop /s /u" Execute="immediate" />
+    <CustomAction Id="InvokeESRIRegAsm_CmdUninstallBNG" Property="InvokeESRIRegAsm_UninstallBNG" Value="&quot;[ARCGISCOMMON]bin\ESRIRegAsm.exe&quot; &quot;[INSTALLLOCATION]ESRIUK.DynamicLocators.BNGLocator.dll&quot; /p Desktop /s /u" Execute="immediate" />
+    <!--<CustomAction Id="InvokeESRIRegAsm_CmdUninstallING" Property="InvokeESRIRegAsm_UninstallING" Value="&quot;[ARCGISCOMMON]bin\ESRIRegAsm.exe&quot; &quot;[INSTALLLOCATION]ESRIUK.DynamicLocators.INGLocator.dll&quot; /p Desktop /s /u" Execute="immediate" />-->
+    <CustomAction Id="InvokeESRIRegAsm_CmdUninstallGeoCoord" Property="InvokeESRIRegAsm_UninstallGeoCoord" Value="&quot;[ARCGISCOMMON]bin\ESRIRegAsm.exe&quot; &quot;[INSTALLLOCATION]ESRIUK.DynamicLocators.GeoCoordLocator.dll&quot; /p Desktop /s /u" Execute="immediate" />
+
+
+    <CustomAction Id="InvokeESRIRegAsm_UninstallCore" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" Impersonate="no" />
+    <CustomAction Id="InvokeESRIRegAsm_UninstallBNG" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" Impersonate="no" />
+    <!--<CustomAction Id="InvokeESRIRegAsm_UninstallING" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" Impersonate="no" />-->
+    <CustomAction Id="InvokeESRIRegAsm_UninstallGeoCoord" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" Impersonate="no" />
+
+    
+    
+    <!-- Registering with SERVER -->
+    <CustomAction Id="InvokeESRIRegAsm_CmdCore_Srvr" Property="InvokeESRIRegAsm_Core_Srvr" Value="&quot;[ARCGISCOMMON64]bin\ESRIRegAsm.exe&quot; &quot;[INSTALLLOCATION]ESRIUK.DynamicLocators.Core.dll&quot; /p Server /s" Execute="immediate" />
+    <CustomAction Id="InvokeESRIRegAsm_CmdBNG_Srvr" Property="InvokeESRIRegAsm_BNG_Srvr" Value="&quot;[ARCGISCOMMON64]bin\ESRIRegAsm.exe&quot; &quot;[INSTALLLOCATION]ESRIUK.DynamicLocators.BNGLocator.dll&quot; /p Server /s" Execute="immediate" />
+    <!--<CustomAction Id="InvokeESRIRegAsm_CmdING_Srvr" Property="InvokeESRIRegAsm_ING_Srvr" Value="&quot;[ARCGISCOMMON64]bin\ESRIRegAsm.exe&quot; &quot;[INSTALLLOCATION]ESRIUK.DynamicLocators.INGLocator.dll&quot; /p Server /s" Execute="immediate" />-->
+    <CustomAction Id="InvokeESRIRegAsm_CmdGeoCoord_Srvr" Property="InvokeESRIRegAsm_GeoCoord_Srvr" Value="&quot;[ARCGISCOMMON64]bin\ESRIRegAsm.exe&quot; &quot;[INSTALLLOCATION]ESRIUK.DynamicLocators.GeoCoordLocator.dll&quot; /p Server /s" Execute="immediate" />
+
+    <CustomAction Id="InvokeESRIRegAsm_Core_Srvr" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" Impersonate="no"  />
+    <CustomAction Id="InvokeESRIRegAsm_BNG_Srvr" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" Impersonate="no" />
+    <!--<CustomAction Id="InvokeESRIRegAsm_ING_Srvr" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" Impersonate="no" />-->
+    <CustomAction Id="InvokeESRIRegAsm_GeoCoord_Srvr" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" Impersonate="no" />
+
+    <CustomAction Id="InvokeESRIRegAsm_CmdUninstallCore_Srvr" Property="InvokeESRIRegAsm_UninstallCore_Srvr" Value="&quot;[ARCGISCOMMON64]bin\ESRIRegAsm.exe&quot; &quot;[INSTALLLOCATION]ESRIUK.DynamicLocators.Core.dll&quot; /p Server /s /u" Execute="immediate" />
+    <CustomAction Id="InvokeESRIRegAsm_CmdUninstallBNG_Srvr" Property="InvokeESRIRegAsm_UninstallBNG_Srvr" Value="&quot;[ARCGISCOMMON64]bin\ESRIRegAsm.exe&quot; &quot;[INSTALLLOCATION]ESRIUK.DynamicLocators.BNGLocator.dll&quot; /p Server /s /u" Execute="immediate" />
+    <!--<CustomAction Id="InvokeESRIRegAsm_CmdUninstallING_Srvr" Property="InvokeESRIRegAsm_UninstallING_Srvr" Value="&quot;[ARCGISCOMMON64]bin\ESRIRegAsm.exe&quot; &quot;[INSTALLLOCATION]ESRIUK.DynamicLocators.INGLocator.dll&quot; /p Server /s /u" Execute="immediate" />-->
+    <CustomAction Id="InvokeESRIRegAsm_CmdUninstallGeoCoord_Srvr" Property="InvokeESRIRegAsm_UninstallGeoCoord_Srvr" Value="&quot;[ARCGISCOMMON64]bin\ESRIRegAsm.exe&quot; &quot;[INSTALLLOCATION]ESRIUK.DynamicLocators.GeoCoordLocator.dll&quot; /p Server /s /u" Execute="immediate" />
+
+
+    <CustomAction Id="InvokeESRIRegAsm_UninstallCore_Srvr" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" Impersonate="no" />
+    <CustomAction Id="InvokeESRIRegAsm_UninstallBNG_Srvr" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" Impersonate="no" />
+    <!--<CustomAction Id="InvokeESRIRegAsm_UninstallING_Srvr" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" Impersonate="no" />-->
+    <CustomAction Id="InvokeESRIRegAsm_UninstallGeoCoord_Srvr" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" Impersonate="no" />
+
+
+    <!--Install Sequence-->
+    <InstallExecuteSequence>
+      <!--Upgrading actions-->
+      <Custom Action='AlreadyUpdated' After='FindRelatedProducts'>SELFFOUND</Custom>
+      <Custom Action='PreventDowngrading' After='FindRelatedProducts'>NEWERFOUND</Custom>
+      
+      <!-- Register all DLLs for DESKTOP-->
+      <Custom Action="InvokeESRIRegAsm_CmdCore" After="StartServices">$DynamicLocator_Component&gt;2 AND ARCGIS_VERSION_DESKTOP</Custom>
+      <Custom Action="InvokeESRIRegAsm_Core" After="InvokeESRIRegAsm_CmdCore">$DynamicLocator_Component&gt;2 AND ARCGIS_VERSION_DESKTOP</Custom>
+      
+      <Custom Action="InvokeESRIRegAsm_CmdBNG" After="InvokeESRIRegAsm_Core">$DynamicLocator_Component&gt;2 AND ARCGIS_VERSION_DESKTOP</Custom>
+      <Custom Action="InvokeESRIRegAsm_BNG" After="InvokeESRIRegAsm_CmdBNG">$DynamicLocator_Component&gt;2 AND ARCGIS_VERSION_DESKTOP</Custom>
+
+      <!--<Custom Action="InvokeESRIRegAsm_CmdING" After="InvokeESRIRegAsm_BNG">$DynamicLocator_Component&gt;2 AND ARCGIS_VERSION_DESKTOP</Custom>
+      <Custom Action="InvokeESRIRegAsm_ING" After="InvokeESRIRegAsm_CmdING">$DynamicLocator_Component&gt;2 AND ARCGIS_VERSION_DESKTOP</Custom>-->
+
+      <Custom Action="InvokeESRIRegAsm_CmdGeoCoord" After="InvokeESRIRegAsm_BNG">$DynamicLocator_Component&gt;2 AND ARCGIS_VERSION_DESKTOP</Custom>
+      <Custom Action="InvokeESRIRegAsm_GeoCoord" After="InvokeESRIRegAsm_CmdGeoCoord">$DynamicLocator_Component&gt;2 AND ARCGIS_VERSION_DESKTOP</Custom>
+
+      <Custom Action="InvokeESRIRegAsm_CmdUninstallCore" After="MsiUnpublishAssemblies">$DynamicLocator_Component=2 AND ARCGIS_VERSION_DESKTOP</Custom>
+      <Custom Action="InvokeESRIRegAsm_UninstallCore" After="InvokeESRIRegAsm_CmdUninstallCore">$DynamicLocator_Component=2 AND ARCGIS_VERSION_DESKTOP</Custom>
+      
+      <Custom Action="InvokeESRIRegAsm_CmdUninstallBNG" After="InvokeESRIRegAsm_UninstallCore">$DynamicLocator_Component=2 AND ARCGIS_VERSION_DESKTOP</Custom>
+      <Custom Action="InvokeESRIRegAsm_UninstallBNG" After="InvokeESRIRegAsm_CmdUninstallBNG">$DynamicLocator_Component=2 AND ARCGIS_VERSION_DESKTOP</Custom>
+
+      <!--<Custom Action="InvokeESRIRegAsm_CmdUninstallING" After="InvokeESRIRegAsm_UninstallBNG">$DynamicLocator_Component=2 AND ARCGIS_VERSION_DESKTOP</Custom>
+      <Custom Action="InvokeESRIRegAsm_UninstallING" After="InvokeESRIRegAsm_CmdUninstallING">$DynamicLocator_Component=2 AND ARCGIS_VERSION_DESKTOP</Custom>-->
+
+      <Custom Action="InvokeESRIRegAsm_CmdUninstallGeoCoord" After="InvokeESRIRegAsm_UninstallBNG">$DynamicLocator_Component=2 AND ARCGIS_VERSION_DESKTOP</Custom>
+      <Custom Action ="InvokeESRIRegAsm_UninstallGeoCoord" After="InvokeESRIRegAsm_CmdUninstallGeoCoord">$DynamicLocator_Component=2 AND ARCGIS_VERSION_DESKTOP</Custom>
+
+      <!-- Register all DLLs for SERVER-->
+      <Custom Action="InvokeESRIRegAsm_CmdCore_Srvr" After="StartServices">$DynamicLocator_Component&gt;2 AND ARCGIS_VERSION_SERVER</Custom>
+      <Custom Action="InvokeESRIRegAsm_Core_Srvr" After="InvokeESRIRegAsm_CmdCore_Srvr">$DynamicLocator_Component&gt;2 AND ARCGIS_VERSION_SERVER</Custom>
+      
+      <Custom Action="InvokeESRIRegAsm_CmdBNG_Srvr" After="InvokeESRIRegAsm_Core_Srvr">$DynamicLocator_Component&gt;2 AND ARCGIS_VERSION_SERVER</Custom>
+      <Custom Action="InvokeESRIRegAsm_BNG_Srvr" After="InvokeESRIRegAsm_CmdBNG_Srvr">$DynamicLocator_Component&gt;2 AND ARCGIS_VERSION_SERVER</Custom>
+
+      <!--<Custom Action="InvokeESRIRegAsm_CmdING_Srvr" After="InvokeESRIRegAsm_BNG_Srvr">$DynamicLocator_Component&gt;2 AND ARCGIS_VERSION_SERVER</Custom>
+      <Custom Action="InvokeESRIRegAsm_ING_Srvr" After="InvokeESRIRegAsm_CmdING_Srvr">$DynamicLocator_Component&gt;2 AND ARCGIS_VERSION_SERVER</Custom>-->
+
+      <Custom Action="InvokeESRIRegAsm_CmdGeoCoord_Srvr" After="InvokeESRIRegAsm_BNG_Srvr">$DynamicLocator_Component&gt;2 AND ARCGIS_VERSION_SERVER</Custom>
+      <Custom Action="InvokeESRIRegAsm_GeoCoord_Srvr" After="InvokeESRIRegAsm_CmdGeoCoord_Srvr">$DynamicLocator_Component&gt;2 AND ARCGIS_VERSION_SERVER</Custom>
+
+      <Custom Action="InvokeESRIRegAsm_CmdUninstallCore_Srvr" After="MsiUnpublishAssemblies">$DynamicLocator_Component=2 AND ARCGIS_VERSION_SERVER</Custom>
+      <Custom Action="InvokeESRIRegAsm_UninstallCore_Srvr" After="InvokeESRIRegAsm_CmdUninstallCore_Srvr">$DynamicLocator_Component=2 AND ARCGIS_VERSION_SERVER</Custom>
+      
+      <Custom Action="InvokeESRIRegAsm_CmdUninstallBNG_Srvr" After="InvokeESRIRegAsm_UninstallCore_Srvr">$DynamicLocator_Component=2 AND ARCGIS_VERSION_SERVER</Custom>
+      <Custom Action="InvokeESRIRegAsm_UninstallBNG_Srvr" After="InvokeESRIRegAsm_CmdUninstallBNG_Srvr">$DynamicLocator_Component=2 AND ARCGIS_VERSION_SERVER</Custom>
+
+      <!--<Custom Action="InvokeESRIRegAsm_CmdUninstallING_Srvr" After="InvokeESRIRegAsm_UninstallBNG_Srvr">$DynamicLocator_Component=2 AND ARCGIS_VERSION_SERVER</Custom>
+      <Custom Action="InvokeESRIRegAsm_UninstallING_Srvr" After="InvokeESRIRegAsm_CmdUninstallING_Srvr">$DynamicLocator_Component=2 AND ARCGIS_VERSION_SERVER</Custom>-->
+
+      <Custom Action ="InvokeESRIRegAsm_CmdUninstallGeoCoord_Srvr" After="InvokeESRIRegAsm_UninstallBNG_Srvr">$DynamicLocator_Component=2 AND ARCGIS_VERSION_SERVER</Custom>
+      <Custom Action ="InvokeESRIRegAsm_UninstallGeoCoord_Srvr" After="InvokeESRIRegAsm_CmdUninstallGeoCoord_Srvr">$DynamicLocator_Component=2 AND ARCGIS_VERSION_SERVER</Custom>
+
+      <RemoveExistingProducts After="InstallInitialize"/>
+    </InstallExecuteSequence>
+
+    
+    <!-- ArcGIS DESKTOP Installation Directory -->
+    <Property Id="ARCGISHOME">
+      <RegistrySearch Id="ARCGISHOME_Registry1022" Type="raw" Root="HKLM" Key="Software\ESRI\Desktop10.2.2" Name="InstallDir" Win64="no"/>
+    </Property>
+    <Property Id="ARCGISHOME1030">
+      <RegistrySearch Id="ARCGISHOME_Registry1030" Type="raw" Root="HKLM" Key="Software\ESRI\Desktop10.3" Name="InstallDir" Win64="no"/>
+    </Property>
+    <Property Id="ARCGISHOME1031">
+      <RegistrySearch Id="ARCGISHOME_Registry1031" Type="raw" Root="HKLM" Key="Software\ESRI\Desktop10.3.1" Name="InstallDir" Win64="no"/>
+    </Property>
+    <Property Id="ARCGISHOME1032">
+      <RegistrySearch Id="ARCGISHOME_Registry1032" Type="raw" Root="HKLM" Key="Software\ESRI\Desktop10.3.2" Name="InstallDir" Win64="no"/>
+    </Property>
+    <Property Id="ARCGISHOME1033">
+      <RegistrySearch Id="ARCGISHOME_Registry1033" Type="raw" Root="HKLM" Key="Software\ESRI\Desktop10.3.3" Name="InstallDir" Win64="no"/>
+    </Property>
+
+      <!--If the search for ARCGISHOME1033 was successfull, it overrides the value of ARCGISHOME1032 with the value of ARCGISHOME1033.-->
+    <SetProperty Id="ARCGISHOME1032" After="AppSearch" Value="[ARCGISHOME1033]">ARCGISHOME1033</SetProperty>
+    <!--If the search for ARCGISHOME1032 was successfull, it overrides the value of ARCGISHOME1031 with the value of ARCGISHOME1032.-->
+    <SetProperty Id="ARCGISHOME1031" After="AppSearch" Value="[ARCGISHOME1032]">ARCGISHOME1032</SetProperty>
+    <!--If the search for ARCGISHOME1031 was successfull, it overrides the value of ARCGISHOME1030 with the value of ARCGISHOME1031.-->
+    <SetProperty Id="ARCGISHOME1030" After="AppSearch" Value="[ARCGISHOME1031]">ARCGISHOME1031</SetProperty>
+    <!--If the search for ARCGISHOME1030 was successfull, it overrides the value of ARCGISHOME1022 with the value of ARCGISHOME1030.-->
+    <SetProperty Id="ARCGISHOME" After="AppSearch" Value="[ARCGISHOME1030]">ARCGISHOME1030</SetProperty>
+
+    
+    <!-- ArcGIS SERVER Installation Directory -->
+    <Property Id="ARCGISHOMESERVER">
+      <RegistrySearch Id="ARCGISHOMESERVER_Registry1022" Type="raw" Root="HKLM" Key="Software\ESRI\Server10.2.2" Name="InstallDir" Win64="yes"/>
+    </Property>
+    <Property Id="ARCGISHOMESERVER1030">
+      <RegistrySearch Id="ARCGISHOMESERVER_Registry1030" Type="raw" Root="HKLM" Key="Software\ESRI\Server10.3" Name="InstallDir" Win64="yes"/>
+    </Property>
+    <Property Id="ARCGISHOMESERVER1031">
+      <RegistrySearch Id="ARCGISHOMESERVER_Registry1031" Type="raw" Root="HKLM" Key="Software\ESRI\Server10.3.1" Name="InstallDir" Win64="yes"/>
+    </Property>
+    <Property Id="ARCGISHOMESERVER1032">
+      <RegistrySearch Id="ARCGISHOMESERVER_Registry1032" Type="raw" Root="HKLM" Key="Software\ESRI\Server10.3.2" Name="InstallDir" Win64="yes"/>
+    </Property>
+    <Property Id="ARCGISHOMESERVER1033">
+      <RegistrySearch Id="ARCGISHOMESERVER_Registry1033" Type="raw" Root="HKLM" Key="Software\ESRI\Server10.3.3" Name="InstallDir" Win64="yes"/>
+    </Property>
+    <!--If the search for ARCGISHOMESERVER101 was successfull, it overrides the value of ARCGISHOMESERVER with the value of ARCGISHOMESERVERxxxxx.-->
+
+    <SetProperty Id="ARCGISHOMESERVER1032" After="AppSearch" Value="[ARCGISHOMESERVER1033]">ARCGISHOMESERVER1033</SetProperty>
+    <SetProperty Id="ARCGISHOMESERVER1031" After="AppSearch" Value="[ARCGISHOMESERVER1032]">ARCGISHOMESERVER1032</SetProperty>
+    <SetProperty Id="ARCGISHOMESERVER1030" After="AppSearch" Value="[ARCGISHOMESERVER1031]">ARCGISHOMESERVER1031</SetProperty>
+    <SetProperty Id="ARCGISHOMESERVER" After="AppSearch" Value="[ARCGISHOMESERVER1030]">ARCGISHOMESERVER1030</SetProperty>
+
+    <!-- ArcGIS Common Installation Directory - ESRI regasm can be found in this path-->
+    <Property Id="ARCGISCOMMON">
+      <RegistrySearch Id="ARCGISCOMMON_Registry" Type="raw" Root="HKLM" Key="Software\ESRI\ArcGIS" Name="InstallDir" Win64="no"/> 
+    </Property>
+
+    <Property Id="ARCGISCOMMON64">
+      <RegistrySearch Id="ARCGISCOMMON_Registry64" Type="raw" Root="HKLM" Key="Software\ESRI\ArcGIS" Name="InstallDir" Win64="yes"/>
+    </Property>
+    
+      <!-- Condition to Check for Existence of .NET 4.0-->
+    <PropertyRef Id="NETFRAMEWORK40FULL" />
+    <Condition Message="This application requires Microsoft .NET Framework 4.0 (full) runtime. Please install the .NET Framework and then run this installer again.">
+      Installed OR NETFRAMEWORK40FULL
+    </Condition>
+   
+    <!-- Check for ArcGIS Desktop 64bit 10.0 or 10.1 or 10.2-->
+    <Property Id="ARCGIS_VERSION_DESKTOP">
+      <RegistrySearch Id="ARCGIS_VERSION_DESKTOP_SEARCH" Root="HKLM" Key="SOFTWARE\Wow6432Node\ESRI\ArcGIS" Name="RealVersion" Type="raw" />
+    </Property>
+
+    <!-- Check for ArcGIS Server 10.0 or 10.1 or 10.2-->
+    <Property Id="ARCGIS_VERSION_SERVER">
+      <RegistrySearch Id="ARCGIS_VERSION_SERVER_SEARCH" Root="HKLM" Key="SOFTWARE\ESRI\ArcGIS" Name="RealVersion" Type="raw" />
+    </Property>
+
+    <Condition Message='ArcGIS for Server or ArcGIS for Desktop 10.2 or higher must be installed'>
+      <![CDATA[Installed OR (ARCGIS_VERSION_SERVER >= "10.2.2000" AND ARCGIS_VERSION_SERVER < "10.4.0000") OR (ARCGIS_VERSION_DESKTOP >= "10.2.2000" AND ARCGIS_VERSION_DESKTOP < "10.4.0000")]]>
+    </Condition>
+
+
+    <!-- Install for all users-->
+    <Property Id="ALLUSERS"><![CDATA[1]]></Property>
+
+  </Product>
+</Wix>

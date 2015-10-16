@@ -1,0 +1,84 @@
+
+LocFileUseUTF8 = True
+Category = Address
+Description = British National Grid locator
+Fields = BNG
+
+UseRelativePaths = false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;  Properties Required by ArcGIS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+CLSID = {A1B28934-33BA-4c32-960B-1931BD24BBF7}
+UICLSID = {AE5A3A0E-F756-11D2-9F4F-00C04F8ED1C4}
+
+Interpolate.SideValue.Left = L
+Interpolate.SideValue.Right = R
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;  Esri Geocoder Misc Optional Properties
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+IntersectionConnectors = & @ | and at
+
+; The minimum score a match must have to be returned
+MinimumMatchScore = 85
+
+; The minimum score a candidate must have to be considered
+MinimumCandidateScore = 10
+
+EndOffset = 3
+SideOffset = 20
+SideOffsetUnits = Feet
+
+; Affects how much of a penalty is applied for incorrect spellings
+SpellingSensitivity = 80
+
+MatchIfScoresTie = true
+
+; Specify if the XY fields should be output
+WriteXYCoordFields = false
+
+; Specify if the fields created for Standardisation should be output
+WriteStandardizedAddressField = false
+
+WriteReferenceIDField = true
+WritePercentAlongField = false
+BatchPresortCacheSize = 50000
+
+
+EndOffsetUnits = Percent
+LocatorWorkspaceString = ProgID = esriDataSourcesFile.ShapefileWorkspaceFactory; Path = .
+
+; Maximum number of candidates that can be returned
+MaxCandidates = 200
+MaxPerfectCandidates = 200
+
+; The number of CPU Threads that can be used when processing a search
+NumThreads = 1
+
+RebuildStartTime = 129760336280010000
+RebuildStartTimeAscii = 1:47:08 PM
+
+; Maximum amount of RAM that can be used when processing a search
+RuntimeMemoryLimit = 511705088
+
+SafeLocatorName = BNG_locator
+
+; The length of time to search for before stopping if no results have been found
+SearchTimeout = 10
+
+ShowElapsedTime = false
+StorageSegmentSizeKB = 128
+
+; Used to enable standardisation
+StoreStandardizedRefData = true
+
+WriteAdditionalOutputFields = true
+WriteDisplayExtentFields = false
+WriteLocatorSpecificFields = false
+reportScorePerComponent = false
+supportsEmptyHouseNumber = false
+supportsIntersections = true
+supportsOptionalZone = false

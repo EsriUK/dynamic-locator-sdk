@@ -1,0 +1,8 @@
+"C:\Program Files (x86)\Common Files\ArcGIS\bin\ESRIRegAsm.exe" /p:desktop /u "C:\Program Files\ArcGIS\Server\bin\Esriuk.Geocoding.BNGLocator.dll"
+"C:\Program Files (x86)\Common Files\ArcGIS\bin\ESRIRegAsm.exe" /p:desktop /u "C:\Program Files\ArcGIS\Server\bin\Esriuk.Geocoding.INGLocator.dll"
+"C:\Program Files (x86)\Common Files\ArcGIS\bin\ESRIRegAsm.exe" /p:desktop /u "C:\Program Files\ArcGIS\Server\bin\Esriuk.Geocoding.LatLonLocator.dll"
+"C:\Program Files (x86)\Common Files\ArcGIS\bin\ESRIRegAsm.exe" /p:desktop /u "C:\Program Files\ArcGIS\Server\bin\Esriuk.Geocoding.WrapperBase.dll"
+"C:\Program Files\Common Files\ArcGIS\bin\ESRIRegAsm.exe" /p:server /u "C:\Program Files\ArcGIS\Server\bin\Esriuk.Geocoding.BNGLocator.dll"
+"C:\Program Files\Common Files\ArcGIS\bin\ESRIRegAsm.exe" /p:server /u "C:\Program Files\ArcGIS\Server\bin\Esriuk.Geocoding.INGLocator.dll"
+"C:\Program Files\Common Files\ArcGIS\bin\ESRIRegAsm.exe" /p:server /u "C:\Program Files\ArcGIS\Server\bin\Esriuk.Geocoding.LatLonLocator.dll"
+"C:\Program Files\Common Files\ArcGIS\bin\ESRIRegAsm.exe" /p:server /u "C:\Program Files\ArcGIS\Server\bin\Esriuk.Geocoding.WrapperBase.dll"

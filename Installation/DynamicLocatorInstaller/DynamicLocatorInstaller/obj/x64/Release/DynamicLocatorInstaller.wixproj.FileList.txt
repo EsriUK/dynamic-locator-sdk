@@ -1,0 +1,2 @@
+obj\x64\Release\Application.wixobj
+obj\x64\Release\DynamicLocators.wixobj

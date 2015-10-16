@@ -1,0 +1,10 @@
+C:\Program Files\ArcGIS\Server\bin\bng_locator.loc
+C:\Program Files\ArcGIS\Server\bin\ESRIUK.DynamicLocators.BNGLocator.dll
+C:\Program Files\ArcGIS\Server\bin\ESRIUK.DynamicLocators.BNGLocator.pdb
+C:\Program Files\ArcGIS\Server\bin\ESRIUK.DynamicLocators.BNGLocator.tlb
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocator\obj\Debug\BNGLocator.csprojResolveAssemblyReference.cache
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocator\obj\Debug\ESRIUK.DynamicLocators.BNGLocator.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\BNGLocator\obj\Debug\ESRIUK.DynamicLocators.BNGLocator.pdb
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocator\obj\Debug\ESRIUK.DynamicLocators.BNGLocator.dll
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocator\obj\Debug\ESRIUK.DynamicLocators.BNGLocator.pdb
+C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\BNGLocator\obj\Debug\BNGLocator.csprojResolveAssemblyReference.cache

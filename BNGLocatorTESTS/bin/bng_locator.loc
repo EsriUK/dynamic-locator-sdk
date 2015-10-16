@@ -1,0 +1,57 @@
+
+LocFileUseUTF8 = True
+Category = Address
+Description = British National Grid locator
+Fields = BNG
+
+UseRelativePaths = false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;  Properties Required by ArcGIS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+CLSID = {A1B28934-33BA-4c32-960B-1931BD24BBF7}
+UICLSID = {AE5A3A0E-F756-11D2-9F4F-00C04F8ED1C4}
+
+Interpolate.SideValue.Left = L
+Interpolate.SideValue.Right = R
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;  Esri Geocoder Misc Optional Properties
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+IntersectionConnectors = & @ | and at
+MinimumMatchScore = 85
+MinimumCandidateScore = 10
+EndOffset = 3
+SideOffset = 20
+SideOffsetUnits = Feet
+SpellingSensitivity = 80
+MatchIfScoresTie = true
+WriteXYCoordFields = false
+WriteStandardizedAddressField = false
+WriteReferenceIDField = true
+WritePercentAlongField = false
+BatchPresortCacheSize = 50000
+
+
+EndOffsetUnits = Percent
+LocatorWorkspaceString = ProgID = esriDataSourcesFile.ShapefileWorkspaceFactory; Path = .
+MaxCandidates = 200
+MaxPerfectCandidates = 200
+NumThreads = 1
+RebuildStartTime = 129760336280010000
+RebuildStartTimeAscii = 1:47:08 PM
+RuntimeMemoryLimit = 511705088
+SafeLocatorName = BNG_locator
+SearchTimeout = 10
+ShowElapsedTime = false
+StorageSegmentSizeKB = 128
+StoreStandardizedRefData = true
+WriteAdditionalOutputFields = true
+WriteDisplayExtentFields = false
+WriteLocatorSpecificFields = false
+reportScorePerComponent = false
+supportsEmptyHouseNumber = false
+supportsIntersections = true
+supportsOptionalZone = false

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestSettings name="Local" id="bdbefa7a-94c7-4e1f-ba3a-6ebb01021650" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Description>These are default test settings for a local test run.</Description>
+  <Deployment>
+    <DeploymentItem filename="TestDeploymentResources\" />
+  </Deployment>
+  <Execution>
+    <TestTypeSpecific>
+      <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+        <AssemblyResolution>
+          <TestDirectory useLoadContext="true" />
+        </AssemblyResolution>
+      </UnitTestRunConfig>
+    </TestTypeSpecific>
+    <AgentRule name="LocalMachineDefaultRole">
+      <DataCollectors>
+        <DataCollector uri="datacollector://microsoft/CodeCoverage/1.0" assemblyQualifiedName="Microsoft.VisualStudio.TestTools.CodeCoverage.CoveragePlugIn, Microsoft.VisualStudio.QualityTools.Plugins.CodeCoverage, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" friendlyName="Code Coverage">
+          <Configuration>
+            <CodeCoverage xmlns="">
+              <Regular>
+                <CodeCoverageItem binaryFile="BNGLocator\bin\x86\Release\ESRIUK.DynamicLocators.BNGLocator.dll" pdbFile="BNGLocator\bin\x86\Release\ESRIUK.DynamicLocators.BNGLocator.pdb" />
+                <CodeCoverageItem binaryFile="DynamicLocatorsCore\bin\x86\Release\ESRIUK.DynamicLocators.Core.dll" pdbFile="DynamicLocatorsCore\bin\x86\Release\ESRIUK.DynamicLocators.Core.pdb" />
+                <CodeCoverageItem binaryFile="INGLocator\bin\x86\Release\ESRIUK.DynamicLocators.INGLocator.dll" pdbFile="INGLocator\bin\x86\Release\ESRIUK.DynamicLocators.INGLocator.pdb" />
+                <CodeCoverageItem binaryFile="LatLonLocator\bin\x86\Release\ESRIUK.DynamicLocators.LatLonLocator.dll" pdbFile="LatLonLocator\bin\x86\Release\ESRIUK.DynamicLocators.LatLonLocator.pdb" />
+              </Regular>
+            </CodeCoverage>
+          </Configuration>
+        </DataCollector>
+      </DataCollectors>
+    </AgentRule>
+  </Execution>
+</TestSettings>
