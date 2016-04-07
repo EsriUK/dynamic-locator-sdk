@@ -8,6 +8,8 @@ This SDK can be used for any locator that cannot be created using a Stlyefile, f
 
 There is a known issue with the field data types when geocoding a file where the input fields are numeric, these fields must be wrapped in quotation marks so to force them to be read as strings otherwise the field values will not be read correctly and will not be geocoded.
 
+If the Locator has been compiled on versions other than current release of ArcGIS for Desktop/Server, then they may need to be recompiled for that version.
+
 ## The SDK Solution
 
 The Visual Studio solution contains four projects. The DynamicLocatorCore project is the base project that contains implementations of all of the ArcGIS interfaces required to build a Locator.
