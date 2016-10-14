@@ -2,7 +2,7 @@
 
 ## Introduction
 The Dynamic Locator SDK is an alternative method for creating ArcGIS Locators. It is a Visual Studio C# solution that implements ArcObjects interfaces to allow a third party API or other code to be wrapped in such a way that the third party API or code can be integrated with the ArcGIS platform as an ArcGIS Locator.
-This SDK can be used for any locator that cannot be created using a Stlyefile, for example a mathematical locator that accepts different coordinate systems, or, as mentioned earlier if a location API has some functionality that is desired in an ArcGIS locator the SDK can be used to wrap the API so that it can be used as an ArcGIS Locator. This locator can then be used through ArcGIS for Desktop and/or published to ArcGIS for Server which can then be referenced and used in ArcGIS Online.
+This SDK can be used for any locator that cannot be created using a Stylefile, for example a mathematical locator that accepts different coordinate systems, or, as mentioned earlier if a location API has some functionality that is desired in an ArcGIS locator the SDK can be used to wrap the API so that it can be used as an ArcGIS Locator. This locator can then be used through ArcGIS for Desktop and/or published to ArcGIS for Server which can then be referenced and used in ArcGIS Online.
 
 ## Known Issues
 
