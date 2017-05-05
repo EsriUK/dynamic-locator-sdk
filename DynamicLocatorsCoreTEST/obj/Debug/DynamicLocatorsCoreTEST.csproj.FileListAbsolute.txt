@@ -28,3 +28,23 @@ C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\D
 C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\DynamicLocatorsCoreTEST\obj\Debug\ESRIUK.DynamicLocators.DynamicLocatorsCoreTEST.dll
 C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\DynamicLocatorsCoreTEST\obj\Debug\ESRIUK.DynamicLocators.DynamicLocatorsCoreTEST.pdb
 C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\DynamicLocatorsCoreTEST\bin\ESRIUK.DynamicLocators.Core.pdb
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\bin\ESRIUK.DynamicLocators.DynamicLocatorsCoreTEST.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\bin\ESRIUK.DynamicLocators.DynamicLocatorsCoreTEST.pdb
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\bin\ESRIUK.DynamicLocators.DynamicLocatorsCoreTEST.tlb
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\bin\ESRIUK.DynamicLocators.Core.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\bin\nunit.framework.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\bin\NUnit.VisualStudio.TestAdapter.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\bin\log4net.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\bin\ESRI.ArcGIS.DataSourcesGDB.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\bin\nunit.core.interfaces.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\bin\nunit.util.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\bin\nunit.core.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\bin\ESRIUK.DynamicLocators.Core.pdb
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\bin\nunit.framework.xml
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\bin\ESRI.ArcGIS.DataSourcesGDB.xml
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\obj\Debug\DynamicLocatorsCoreTEST.csprojResolveAssemblyReference.cache
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\obj\Debug\ESRIUK.DynamicLocators.DynamicLocatorsCoreTEST.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\obj\Debug\ESRIUK.DynamicLocators.DynamicLocatorsCoreTEST.pdb
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCoreTEST\bin\log4net.xml

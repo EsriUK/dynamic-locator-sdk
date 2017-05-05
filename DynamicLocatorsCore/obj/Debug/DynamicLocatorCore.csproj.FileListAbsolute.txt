@@ -8,3 +8,18 @@ C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\DynamicLocators\Dynami
 C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\DynamicLocatorsCore\obj\Debug\ESRIUK.DynamicLocators.Core.dll
 C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\DynamicLocatorsCore\obj\Debug\ESRIUK.DynamicLocators.Core.pdb
 C:\Esri_Projects\ASP.Net\UK Products ArcGIS Locators\Code\Dynamic Locators SDK\DynamicLocatorsCore\obj\Debug\DynamicLocatorCore.csprojResolveAssemblyReference.cache
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCore\obj\Debug\ESRIUK.DynamicLocators.Core.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCore\obj\Debug\ESRIUK.DynamicLocators.Core.pdb
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCore\bin\ESRIUK.DynamicLocators.Core.dll.config
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCore\bin\ESRIUK.DynamicLocators.Core.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCore\bin\ESRIUK.DynamicLocators.Core.pdb
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCore\bin\ESRIUK.DynamicLocators.Core.tlb
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCore\bin\log4net.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCore\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCore\bin\NUnit.VisualStudio.TestAdapter.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCore\bin\nunit.core.interfaces.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCore\bin\nunit.util.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCore\bin\nunit.core.dll
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCore\bin\log4net.xml
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCore\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\work\dynamic-locator-sdk\dynamic-locator-sdk\DynamicLocatorsCore\obj\Debug\DynamicLocatorCore.csprojResolveAssemblyReference.cache

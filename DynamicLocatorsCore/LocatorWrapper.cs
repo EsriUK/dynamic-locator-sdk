@@ -30,9 +30,9 @@ namespace ESRIUK.DynamicLocators.Core
        #region Member Variables
        // Create new instance of logger, 1 per class recommended        
        log4net.ILog _log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-       protected IFields m_addressFields;
-       protected IFields m_matchFields;
-       protected IFields m_candidateFields;
+       protected IFields m_addressFields = new FieldsClass();
+       protected IFields m_matchFields =  new FieldsClass();
+       protected IFields m_candidateFields = new FieldsClass();
        protected ISpatialReference m_spatialReference;
        private string m_category = "Address";
        private string m_description = "Locator Wrapper";
@@ -110,6 +110,8 @@ namespace ESRIUK.DynamicLocators.Core
           get
           {
               _log.Debug("IAddressCandidates CandidateFields");
+                if (m_candidateFields == null)
+                    m_candidateFields = new FieldsClass();
           return m_candidateFields;
           }
       }
@@ -670,7 +672,9 @@ namespace ESRIUK.DynamicLocators.Core
           get
           {
               _log.Debug("IAddressGeocoding MatchFields");
-              return m_matchFields;
+                if (m_matchFields == null)
+                    m_matchFields = new FieldsClass();
+                return m_matchFields;
           }
       }
     

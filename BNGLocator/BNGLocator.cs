@@ -46,7 +46,8 @@ namespace ESRIUK.DynamicLocators.BNGLocator
             IFieldEdit yField = new FieldClass();
             IFieldEdit matchField = new FieldClass();
 
-            m_spatialReference = new SpatialReferenceEnvironmentClass().CreateProjectedCoordinateSystem((int)esriSRProjCSType.esriSRProjCS_BritishNationalGrid);
+            ISpatialReferenceFactory spatEnv = new SpatialReferenceEnvironmentClass();
+            m_spatialReference = spatEnv.CreateProjectedCoordinateSystem((int)esriSRProjCSType.esriSRProjCS_BritishNationalGrid);
             SearchDistanceUnits = esriUnits.esriMeters;            
             // Set up the spatial Reference and Geometry Definition            
             IGeometryDefEdit geometryDefEdit = new GeometryDefClass();
@@ -344,8 +345,8 @@ namespace ESRIUK.DynamicLocators.BNGLocator
                     throw new Exception("invalid geotransformation");
                 }
 
-                IGeometry5 geometry;
-                geometry = location as IGeometry5;
+                IGeometry2 geometry;
+                geometry = location as IGeometry2;
                 geometry.SpatialReference = wgs84GCS;
 
                 geometry.ProjectEx(bngPCS, esriTransformDirection.esriTransformReverse, geoTrans, false, 0.0, 0.0);
