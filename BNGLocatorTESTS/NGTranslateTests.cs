@@ -23,8 +23,9 @@ namespace ESRIUK.DynamicLocators.BNGLocatorTests
             {
                 // Required to prevent Runtime.InteropServices.COMException
                 ESRI.ArcGIS.RuntimeManager.Bind(ESRI.ArcGIS.ProductCode.Desktop);
-                bngSRef = new SpatialReferenceEnvironmentClass().CreateProjectedCoordinateSystem((int)esriSRProjCSType.esriSRProjCS_BritishNationalGrid);
-                wgs84SRef = new SpatialReferenceEnvironmentClass().CreateGeographicCoordinateSystem((int)esriSRGeoCSType.esriSRGeoCS_WGS1984);            
+                ISpatialReferenceFactory spf = new SpatialReferenceEnvironmentClass();
+                bngSRef = spf.CreateProjectedCoordinateSystem((int)esriSRProjCSType.esriSRProjCS_BritishNationalGrid);
+                wgs84SRef =spf.CreateGeographicCoordinateSystem((int)esriSRGeoCSType.esriSRGeoCS_WGS1984);            
             }
         }
 

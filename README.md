@@ -8,7 +8,6 @@ This SDK can be used for any locator that cannot be created using a Stylefile, f
 
 There is a known issue with the field data types when geocoding a file where the input fields are numeric, these fields must be wrapped in quotation marks so to force them to be read as strings otherwise the field values will not be read correctly and will not be geocoded.
 
-If the Locator has been compiled on versions other than current release of ArcGIS for Desktop/Server, then they may need to be recompiled for that version.
 
 ## The SDK Solution
 
@@ -16,6 +15,7 @@ The Visual Studio solution contains four projects. The DynamicLocatorCore projec
 The DynamicLocatorsCoreTEST project contains some basic unit tests to cover the code in the DynamicLocatorsCore project.
 The BNGLocator project contains custom code to create a Locator that can geocode BNG grid references. The BNGLocatorTEST project contains some unit tests to cover the code in the BNGLocator project.
 
+The solution targets .Net 4.5.1. The SDK has been built against ArcGIS 10.4, and once compiled work against any greater version over 10.4.
 
 ## DynamicLocatorCore Project
 

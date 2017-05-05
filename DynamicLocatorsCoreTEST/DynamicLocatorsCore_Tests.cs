@@ -51,16 +51,7 @@ namespace ESRIUK.DynamicLocators.DynamicLocatorsCoreTests
             Assert.IsTrue(locWrapper.ReverseGeocode(new Point(),false) != null);
         }
 
-        [Test()]
-        public void TestCore_CandidateFields()
-        {
-            BindRunTime();
-            locWrapper = GetlocWrapperInstance();
-            IFields fields = locWrapper.CandidateFields;
 
-            Assert.IsTrue(fields.FieldCount == 5);
-            Assert.IsTrue(fields.Field[2].Name == "Match_addr");
-        }
 
         [Test()]
         public void TestCore_FindAddressCandidates()
@@ -153,7 +144,7 @@ namespace ESRIUK.DynamicLocators.DynamicLocatorsCoreTests
             BindRunTime();
             locWrapper = GetlocWrapperInstance();
 
-            Assert.IsTrue(locWrapper.UserInterface == null);
+            Assert.IsTrue(locWrapper.UserInterface is ESRI.ArcGIS.LocationUI.AddressLocatorUIClass);
         }
 
         [Test()]
