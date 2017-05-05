@@ -144,7 +144,7 @@ To publish the Locator to ArcGIS for Server follow the steps described here: [Pu
 
 ## Licensing
 
-Copyright 2015 Esri UK
+Copyright 2015-2017 Esri UK
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
